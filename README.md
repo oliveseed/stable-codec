@@ -7,4 +7,4 @@ https://arxiv.org/abs/2411.19842
 Sound demos:
 https://stability-ai.github.io/stable-codec-demo/
 
-Weights will be released soon!
+Weights & code will be released soon!
