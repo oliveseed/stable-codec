@@ -17,7 +17,7 @@ The model itself is defined in [stable-audio-tools](https://github.com/Stability
 To install `stable-codec`:
 
 ```bash
-pip install -e .
+pip install stable-codec
 pip install -U flash-attn --no-build-isolation
 ```
 
@@ -28,7 +28,7 @@ pip install -U flash-attn --no-build-isolation
 To encode audio or decode tokens, the `StableCodec` class provides a convenient wrapper for the model. It can be used with a local checkpoint and config as follows:
 
 ```python
-from stable_codec.model import StableCodec
+from stable_codec import StableCodec
 
 model = StableCodec(
     model_config_path="<path-to-model-config>",
