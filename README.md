@@ -26,7 +26,7 @@ pip install -U flash-attn --no-build-isolation
 To encode audio or decode tokens, the `StableCodec` class provides a convenient wrapper for the model. It can be used with a local checkpoint and config as follows:
 
 ```python
-from model import StableCodec
+from stable_codec.model import StableCodec
 
 model = StableCodec(
     model_config_path="<path-to-model-config>",
