@@ -21,18 +21,20 @@ pip install stable-codec
 pip install -U flash-attn --no-build-isolation
 ```
 
-**IMPORTANT NOTE:** This model currently has a hard requirement for FlashAttention due to its use of sliding window attention. Inference without FlashAttention will likely be greatly degraded. 
+**IMPORTANT NOTE:** This model currently has a hard requirement for FlashAttention due to its use of sliding window attention. Inference without FlashAttention will likely be greatly degraded. This also means that the model currently does not support CPU inference. We will relax the dependency on FlashAttention in the future.
 
 ## Encoding and decoding
 
 To encode audio or decode tokens, the `StableCodec` class provides a convenient wrapper for the model. It can be used with a local checkpoint and config as follows:
 
 ```python
+import torch
 from stable_codec import StableCodec
 
 model = StableCodec(
     model_config_path="<path-to-model-config>",
-    ckpt_path="<path-to-checkpoint>", # optional, can be `None`
+    ckpt_path="<path-to-checkpoint>", # optional, can be `None`,
+    device = torch.device("cuda")
 )
 
 audiopath = "audio.wav"
