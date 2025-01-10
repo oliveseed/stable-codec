@@ -11,7 +11,7 @@ from stable_audio_tools.models.utils import load_ckpt_state_dict
 from stable_audio_tools.training.utils import copy_state_dict
 from stable_audio_tools.data.utils import VolumeNorm
 
-from residual_fsq import ResidualFSQBottleneck
+from .residual_fsq import ResidualFSQBottleneck
 from stable_audio_tools import get_pretrained_model
 
 class StableCodec(nn.Module):

@@ -27,7 +27,7 @@ from stable_audio_tools.training.utils import (
     create_optimizer_from_config, create_scheduler_from_config, log_metric,
 )
 
-from ctc_loss import CTCLossModule, PERModule
+from .ctc_loss import CTCLossModule, PERModule
 
 def trim_to_shortest(a, b):
     """Trim the longer of two tensors to the length of the shorter one."""

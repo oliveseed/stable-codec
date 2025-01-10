@@ -73,7 +73,7 @@ The model is trained with utterances normalized to -20 LUFS. The `encode` functi
 
 ## Finetune
 
-To finetune a model given its config and checkpoint, execute `train.py` file. You can also directly use `stable-audio-tools`:
+To finetune a model given its config and checkpoint, execute `train.py` file:
 
 ```bash
 python train.py \

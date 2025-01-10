@@ -9,9 +9,9 @@ from stable_audio_tools.models import create_model_from_config
 from stable_audio_tools.models.utils import load_ckpt_state_dict, remove_weight_norm_from_model
 from stable_audio_tools.training.utils import copy_state_dict
 
-from training_module import create_training_wrapper_from_config
-from training_demo import create_demo_callback_from_config
-from data.dataset import create_dataloader_from_config
+from stable_codec.training_module import create_training_wrapper_from_config
+from stable_codec.training_demo import create_demo_callback_from_config
+from stable_codec.data.dataset import create_dataloader_from_config
 
 class ExceptionCallback(pl.Callback):
     def on_exception(self, trainer, module, err):
