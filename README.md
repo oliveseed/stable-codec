@@ -14,8 +14,10 @@ In addition to the training described in the paper, the released weights have al
 
 The model itself is defined in [stable-audio-tools](https://github.com/Stability-AI/stable-audio-tools) package.
 
+To install `stable-codec`:
+
 ```bash
-pip install -r requirements.txt
+pip install -e .
 pip install -U flash-attn --no-build-isolation
 ```
 
