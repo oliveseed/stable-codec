@@ -73,7 +73,7 @@ Alternatively, the bottleneck stages can be specified directly. The format for s
 
 ### Normalization
 
-The model is trained with utterances normalized to -20 +-5 LUFS. The `encode` function applies this by default, but it can be disabled by setting `normalize = False` when calling the function. 
+The model is trained with utterances normalized to -20 +-5 LUFS. The `encode` function normalizes to -20 LUFS by default, but it can be disabled by setting `normalize = False` when calling the function. 
 
 ## Finetune
 
