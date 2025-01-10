@@ -15,7 +15,6 @@ from stable_audio_tools.models.discriminators import (
 from stable_audio_tools.models.bottleneck import (
     VAEBottleneck, RVQBottleneck, DACRVQBottleneck, DACRVQVAEBottleneck,
     RVQVAEBottleneck, WassersteinBottleneck,
-    ResidualProjectionVAEBottleneck,
 )
 from stable_audio_tools.training.losses import (
     MelSpectrogramLoss, MultiLoss, AuralossLoss, ValueLoss, L1Loss,
@@ -559,8 +558,7 @@ def create_loss_modules_from_bottleneck(bottleneck, loss_config):
     if (
         isinstance(bottleneck, VAEBottleneck) or
         isinstance(bottleneck, DACRVQVAEBottleneck) or
-        isinstance(bottleneck, RVQVAEBottleneck) or
-        isinstance(bottleneck, ResidualProjectionVAEBottleneck)
+        isinstance(bottleneck, RVQVAEBottleneck)
     ):
         try:
             kl_weight = loss_config['bottleneck']['weights']['kl']
@@ -572,8 +570,7 @@ def create_loss_modules_from_bottleneck(bottleneck, loss_config):
 
     if (
         isinstance(bottleneck, RVQBottleneck) or
-        isinstance(bottleneck, RVQVAEBottleneck) or
-        isinstance(bottleneck, ResidualProjectionVAEBottleneck)
+        isinstance(bottleneck, RVQVAEBottleneck)
     ):
         quantizer_loss = ValueLoss(key='quantizer_loss', weight=1.0, name='quantizer_loss')
         losses.append(quantizer_loss)
