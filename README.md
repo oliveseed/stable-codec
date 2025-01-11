@@ -35,6 +35,7 @@ To encode audio or decode tokens, the `StableCodec` class provides a convenient 
 
 ```python
 import torch
+import torchaudio
 from stable_codec import StableCodec
 
 model = StableCodec(
