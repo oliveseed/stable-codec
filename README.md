@@ -14,7 +14,7 @@ Note that whilst this code is MIT licensed, the model weights are covered by the
 
 ## Additional training
 
-In addition to the training described in the paper, the released weights have also undergone 500k steps of finetuning with force-aligned phoneme data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the phoneme categories from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS.
+In addition to the training described in the paper, the released weights have also undergone 500k steps of finetuning with force-aligned data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the phoneme categories from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS.
 
 ## Install
 
