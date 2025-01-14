@@ -14,7 +14,12 @@ Note that whilst this code is MIT licensed, the model weights are covered by the
 
 ## Additional training
 
-In addition to the training described in the paper, the released weights have also undergone 500k steps of finetuning with force-aligned data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the force-aligned tags from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS.
+In addition to the training described in the paper, the released weights have also undergone 500k steps of finetuning with force-aligned data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the force-aligned tags from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS, at a small cost to reconstruction metrics.
+
+| Model                     | SI-SDR | Mel Dis | STFT Dis | PESQ | STOI | 
+|---------------------------|-------:|--------:|---------:|-----:|-----:|
+| base         | 4.73   | 0.86    | 1.26     | 3.09 | 0.92 |
+| CTC finefune | 3.58   | 0.90    | 1.30     | 3.01 | 0.90 | 
 
 ## Install
 
