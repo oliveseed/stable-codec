@@ -8,6 +8,15 @@ Sound demos: https://stability-ai.github.io/stable-codec-demo/
 
 Model weights: https://huggingface.co/stabilityai/stable-codec-speech-16k
 
+## Changelog
+
+### [v0.1.2] 14-01-25
+- __New__ added hooks for `stable-codec-speech-16k-base`. 
+- __Fix__ fixed major issue with precision in FSQ token calculation, which was degrading results. Fix is currently local, will be upstreamed to `stable-audio-tools` later.
+### [v0.1.1] 10-01-25 
+- Release
+
+
 ##
 
 Note that whilst this code is MIT licensed, the model weights are covered by the [Stability AI Community License](https://huggingface.co/stabilityai/stable-codec-speech-16k/blob/main/LICENSE.md)
