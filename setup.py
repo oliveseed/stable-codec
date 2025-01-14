@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='stable-codec',
-    version='0.1.1',
+    version='0.1.2',
     author='Stability AI',
     author_email='julian.parker@stability.ai',
     description='Stable Codec: A series of codec models for speech and audio',
