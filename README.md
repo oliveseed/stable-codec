@@ -23,8 +23,8 @@ Note that whilst this code is MIT licensed, the model weights are covered by the
 
 ## Variants
 The model is currently available in two variants:
-- `stable-codec-speech-16k-base` is the weights corresponding to the results in our [publication](https://arxiv.org/abs/2411.19842), provided for reproducibility.
 - `stable-codec-speech-16k` is an improved finetune, with boosted latent semantics. __It should be used in 99% of use-cases.__
+- `stable-codec-speech-16k-base` is the weights corresponding to the results in our [publication](https://arxiv.org/abs/2411.19842), provided for reproducibility.
 
 ### Additional Training
 
