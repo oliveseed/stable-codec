@@ -12,14 +12,14 @@ Model weights: https://huggingface.co/stabilityai/stable-codec-speech-16k
 
 Note that whilst this code is MIT licensed, the model weights are covered by the [Stability AI Community License](https://huggingface.co/stabilityai/stable-codec-speech-16k/blob/main/LICENSE.md)
 
-## Additional training
+## Variants
+The model is currently available in two variants:
+- `stable-codec-speech-16k-base` is the weights corresponding to the results in our [publication](https://arxiv.org/abs/2411.19842), provided for reproducibility.
+- `stable-codec-speech-16k` is an improved finetune, with boosted latent semantics. It should be used in 99% of use-cases.
 
-In addition to the training described in the paper, the released weights have also undergone 500k steps of finetuning with force-aligned data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the force-aligned tags from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS, at a small cost to reconstruction metrics.
+### Additional Training
 
-| Model                     | SI-SDR | Mel Dis | STFT Dis | PESQ | STOI | 
-|---------------------------|-------:|--------:|---------:|-----:|-----:|
-| base         | 4.73   | 0.86    | 1.26     | 3.09 | 0.92 |
-| CTC finefune | 3.58   | 0.90    | 1.30     | 3.01 | 0.90 | 
+In addition to the training described in the paper, the weights for `stable-codec-speech-16k` have undergone 500k steps of finetuning with force-aligned data from LibriLight and the English portion Multilingual LibriSpeech. This was performed by using a CTC head to regress the force-aligned phoneme tags from pre-bottleneck latents. We found that this additional training significantly boosted the applicability of the codec tokens to downstream tasks like TTS, at a small cost to objective reconstruction metrics.
 
 ## Install
 
@@ -169,3 +169,10 @@ and in the training dataset configuration.
        ]
      }
      ```
+## Objective Metrics
+
+| Model                     | SI-SDR | Mel Dis | STFT Dis | PESQ | STOI | 
+|---------------------------|-------:|--------:|---------:|-----:|-----:|
+| `stable-codec-speech-16k-base`         | 4.73   | 0.86    | 1.26     | 3.09 | 0.92 |
+| `stable-codec-speech-16k` | 3.58   | 0.90    | 1.30     | 3.01 | 0.90 | 
+
