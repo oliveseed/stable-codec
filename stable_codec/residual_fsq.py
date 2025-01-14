@@ -18,14 +18,15 @@ class ResidualFSQBottleneck(nn.Module):
         self.codebook_size = sum(map(len, stages)) * self.n_codebooks
 
     def encode(self, x):
-        z = torch.tanh(x)
+        input_dtype = x.dtype
+        z = torch.tanh(x.to(torch.float64))
         z = rearrange(z, "b c n -> b n c")
 
         r = z
         res_ids = []
         for quantizer in self.quantizers:
             q, ids = quantizer(r, skip_tanh=True)
-            r = r - q
+            r = r - q.to(torch.float64)
             res_ids.append(ids)
 
         return res_ids
