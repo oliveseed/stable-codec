@@ -3,7 +3,7 @@ import torch.nn as nn
 
 from typing import List, Tuple
 from einops import rearrange
-from stable_audio_tools.models.fsq import DitheredFSQ
+from .fsq import DitheredFSQ
 
 class ResidualFSQBottleneck(nn.Module):
     def __init__(self, stages: List[Tuple[List[int], float]]):
