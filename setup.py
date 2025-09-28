@@ -13,9 +13,9 @@ setup(
     python_requires='>=3.9',
     install_requires=['packaging',
                       'wheel',
-                      'torch==2.4',
-                      'torchaudio==2.4',
-                      'stable-audio-tools==0.0.17',
+                      'torch==2.8',
+                      'torchaudio==2.8',
+                      'stable-audio-tools==0.0.19',
                       'pytorch-lightning==2.1',
                       'prefigure==0.0.9']
 )
